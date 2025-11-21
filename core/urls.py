@@ -23,12 +23,12 @@ urlpatterns = [
         {"document_root": settings.BASE_DIR / "dist" / "assets"},
         name="frontend-assets",
     ),
+    path("api/laiding/", include("app.laiding.urls")),
 
     path("", include(yasg)),
 ]
 
 urlpatterns += i18n_patterns(
-    path("api/laiding/", include("app.laiding.urls")),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
